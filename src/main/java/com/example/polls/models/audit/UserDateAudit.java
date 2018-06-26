@@ -32,13 +32,9 @@ public abstract class UserDateAudit extends DateAudit {
 
     @CreatedBy
     @Column(updatable = false)
-    @Getter
-    @Setter
     private Long createdBy;
 
 
-    @Getter
-    @Setter
     @LastModifiedBy
     private Long updatedBy;
 }

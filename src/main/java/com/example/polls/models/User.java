@@ -1,6 +1,7 @@
 package com.example.polls.models;
 
 import com.example.polls.models.audit.DateAudit;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,6 +27,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "user", uniqueConstraints = {
         @UniqueConstraint(columnNames = {
                 "username"
@@ -37,44 +39,28 @@ import java.util.Set;
 public class User extends DateAudit {
 //public class User {
 
-    @Getter
-    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    @Getter
-    @Setter
     @NotBlank
     @Size(max = 40)
     private String name;
-
-
-    @Getter
-    @Setter
+   
     @NotBlank
     @Size(max = 15)
     private String username;
 
-
-    @Getter
-    @Setter
     @NaturalId
     @NotBlank
     @Size(max = 40)
     @Email
     private String email;
 
-    @Getter
-    @Setter
     @NotBlank
     @Size(max = 180)
     private String password;
 
-
-    @Getter
-    @Setter
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
     joinColumns = @JoinColumn(name = "user_id"),
@@ -82,16 +68,14 @@ public class User extends DateAudit {
     )
     private Set<Role> roles = new HashSet<>();
 
-    public User(String name, String username, String email, String password) {
+    public User(){
 
+    }
+
+    public User(@NotBlank @Size(max = 40) String name, @NotBlank @Size(max = 15) String username, @NotBlank @Size(max = 40) @Email String email, @NotBlank @Size(max = 180) String password) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
     }
-
-    public User() {
-
-    }
-
 }

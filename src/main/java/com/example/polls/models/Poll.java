@@ -33,14 +33,12 @@ import java.util.List;
 @Table(name = "polls")
 public class Poll extends UserDateAudit {
 
-    @Getter
-    @Setter
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
-    @Setter
+   
     @NotBlank
     @Size(max = 140)
     private String question;
@@ -55,12 +53,9 @@ public class Poll extends UserDateAudit {
     @Size(min = 2, max = 12)
     @Fetch(FetchMode.SELECT)
     @BatchSize(size = 32)
-    @Getter
-    @Setter
     private List<Choice> choices = new ArrayList<>();
 
-    @Getter
-    @Setter
+   
     @NotNull
     private Instant expirationDateTime;
 

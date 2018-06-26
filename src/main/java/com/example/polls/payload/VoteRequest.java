@@ -2,6 +2,7 @@ package com.example.polls.payload;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 /**
@@ -9,20 +10,14 @@ import lombok.Setter;
  * Package: com.example.polls.payload
  * User: YuAn
  * Date: 2018/6/25
- * Time: 13:10
+ * Time: 22:58
  * Project_name: polls
  * To change this template use File | Settings | File Templates.
  * Description:
  */
 @Data
-public class JwtAuthenticationResponse {
+public class VoteRequest {
 
-    private String accessToken;
-
-    private String tokenType = "Bearer";
-
-    public JwtAuthenticationResponse(String accessToken){
-        this.accessToken = accessToken;
-    }
-
+    @NonNull
+    private Long choiceId;
 }

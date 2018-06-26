@@ -22,15 +22,13 @@ import javax.persistence.*;
 @Table(name = "roles")
 public class Role {
 
-    @Getter
-    @Setter
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
-    @Getter
-    @Setter
+    
     @Enumerated(EnumType.STRING)
     @NaturalId
     @Column(length = 60)

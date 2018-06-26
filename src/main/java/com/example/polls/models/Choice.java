@@ -1,5 +1,6 @@
 package com.example.polls.models;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,28 +19,25 @@ import java.util.Objects;
  * To change this template use File | Settings | File Templates.
  * Description:
  */
+@Data
 @Entity
 @Table(name = "choices")
 public class Choice {
 
 
     @Id
-    @Getter
-    @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
     @Size(max = 40)
-    @Getter
-    @Setter
+    
+    
     private String text;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "poll_id", nullable = false)
-    @Getter
-    @Setter
     private Poll poll;
 
 
@@ -53,20 +51,20 @@ public class Choice {
 
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Choice choice = (Choice) o;
-        return Objects.equals(id, choice.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) {
+//            return true;
+//        }
+//        if (o == null || getClass() != o.getClass()) {
+//            return false;
+//        }
+//        Choice choice = (Choice) o;
+//        return Objects.equals(id, choice.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 }

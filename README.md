@@ -1,2 +1,2 @@
 # polls
-*** Spring Boot + Spring Security + JWT + MySQL + React全栈 ***
+* Spring Boot + Spring Security + JWT + MySQL + React全栈 
