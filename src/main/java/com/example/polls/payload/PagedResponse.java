@@ -17,7 +17,6 @@ import java.util.List;
  */
 
 @Data
-@AllArgsConstructor
 public class PagedResponse<T> {
 
     private List<T> content;

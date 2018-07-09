@@ -1,8 +1,6 @@
 package com.example.polls.repository;
 
-import com.example.polls.models.Choice;
 import com.example.polls.models.ChoiceVoteCount;
-import com.example.polls.models.Poll;
 import com.example.polls.models.Vote;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +22,7 @@ import java.util.Optional;
  * To change this template use File | Settings | File Templates.
  * Description:
  */
+
 @Repository
 public interface VoteRepository extends JpaRepository<Vote, Long> {
 

@@ -21,6 +21,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  * Description:
  */
+
 @Data
 public class PollRequest {
 
@@ -35,6 +36,10 @@ public class PollRequest {
     @NonNull
     @Valid
     private PollLength pollLength;
+
+    public PollRequest(){
+
+    }
 
 
 }

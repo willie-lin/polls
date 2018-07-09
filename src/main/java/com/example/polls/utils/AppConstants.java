@@ -1,6 +1,5 @@
 package com.example.polls.utils;
 
-import lombok.Data;
 
 /**
  * Created with IntelliJ IDEA.

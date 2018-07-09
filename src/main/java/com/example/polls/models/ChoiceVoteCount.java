@@ -2,9 +2,6 @@ package com.example.polls.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,8 +22,5 @@ public class ChoiceVoteCount {
 
     private Long voteCount;
 
-//    public ChoiceVoteCount(Long choiceId, Long voteCount) {
-//        this.choiceId = choiceId;
-//        this.voteCount = voteCount;
-//    }
+
 }

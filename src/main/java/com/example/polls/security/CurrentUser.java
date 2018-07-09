@@ -15,9 +15,17 @@ import java.lang.annotation.*;
  * Description:
  */
 
-@Target({ElementType.PACKAGE, ElementType.TYPE})
+@Target({ElementType.PARAMETER, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @AuthenticationPrincipal
 public @interface CurrentUser {
+
+
+
+//@Target({ElementType.PARAMETER, ElementType.TYPE})
+//@Retention(RetentionPolicy.RUNTIME)
+//@Documented
+//@AuthenticationPrincipal
+
 }

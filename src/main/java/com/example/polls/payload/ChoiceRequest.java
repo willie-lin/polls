@@ -26,4 +26,5 @@ public class ChoiceRequest {
     @Size(max = 40)
     private String text;
 
+
 }

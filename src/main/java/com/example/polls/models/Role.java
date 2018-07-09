@@ -33,4 +33,13 @@ public class Role {
     @NaturalId
     @Column(length = 60)
     private RoleName name;
+
+    public Role(){
+
+    }
+
+    public Role(RoleName name){
+        this.name = name;
+    }
 }
+

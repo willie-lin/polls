@@ -19,6 +19,7 @@ import java.util.Objects;
  * To change this template use File | Settings | File Templates.
  * Description:
  */
+
 @Data
 @Entity
 @Table(name = "choices")
@@ -31,40 +32,39 @@ public class Choice {
 
     @NotBlank
     @Size(max = 40)
-    
-    
     private String text;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "poll_id", nullable = false)
     private Poll poll;
 
 
     public Choice(){
-
     }
 
 
     public Choice(String text){
         this.text = text;
-
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) {
-//            return true;
-//        }
-//        if (o == null || getClass() != o.getClass()) {
-//            return false;
-//        }
-//        Choice choice = (Choice) o;
-//        return Objects.equals(id, choice.id);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Choice choice = (Choice) o;
+        return Objects.equals(id, choice.id) &&
+                Objects.equals(text, choice.text) &&
+                Objects.equals(poll, choice.poll);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, text, poll);
+    }
 }

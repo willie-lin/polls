@@ -168,8 +168,7 @@ public class PollService {
 
         Instant now = Instant.now();
 
-        Instant expirationDateTime = now.plus(Duration.ofDays(pollRequest.getPollLength().getDays())).plus(Duration.ofHours(pollRequest.getPollLength().getHours()))
-                .plus(Duration.ofMinutes(pollRequest.getPollLength().getMinute()));
+        Instant expirationDateTime = now.plus(Duration.ofDays(pollRequest.getPollLength().getDays())).plus(Duration.ofHours(pollRequest.getPollLength().getHours()));
 
         poll.setExpirationDateTime(expirationDateTime);
         return pollRepository.save(poll);
@@ -184,9 +183,7 @@ public class PollService {
 
         Map<Long, Long> choiceVotesMap = votes.stream().collect(Collectors.toMap(ChoiceVoteCount::getChoiceId, ChoiceVoteCount::getVoteCount));
 
-        User creator = userRepository.findById(currentUser.getId()).orElseThrow(() ->
-
-                new ResourceNotFoundException("User", "Id", poll.getCreatedBy()));
+        User creator = userRepository.findById(poll.getCreatedBy()).orElseThrow(() -> new ResourceNotFoundException("User", "id", poll.getCreatedBy()));
 
         Vote userVote = null;
 

@@ -30,7 +30,9 @@ public class PollLength {
     private Integer hours;
 
 
-    @NonNull
-    @Max(59)
-    private Integer minute;
+
+
+//    @NonNull
+//    @Max(59)
+//    private Integer minute;
 }

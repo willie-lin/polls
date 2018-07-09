@@ -21,5 +21,4 @@ public class UserIdentityAvailability {
 
     private Boolean available;
 
-
 }

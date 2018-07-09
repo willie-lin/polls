@@ -10,8 +10,10 @@ package com.example.polls.models;
  * To change this template use File | Settings | File Templates.
  * Description:
  */
+
 public enum  RoleName {
 
     ROLE_USER,
     ROLE_ADMIN
+
 }

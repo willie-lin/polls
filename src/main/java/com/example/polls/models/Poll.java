@@ -33,7 +33,6 @@ import java.util.List;
 @Table(name = "polls")
 public class Poll extends UserDateAudit {
 
-   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

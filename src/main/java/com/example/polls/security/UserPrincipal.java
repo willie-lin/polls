@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
  * Project_name: polls
  * To change this template use File | Settings | File Templates.
  * Description:
+ * @author YuAn
  */
 @Data
 public class UserPrincipal implements UserDetails {
